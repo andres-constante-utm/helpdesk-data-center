@@ -1,0 +1,174 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Página-1" id="qXDuYrsJ2TyKEZDe5eXo">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-22" edge="1" parent="1" source="TWbTh4IrmaAo-LOvmZrs-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;" target="TWbTh4IrmaAo-LOvmZrs-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-1" parent="1" style="shape=umlActor;verticalLabelPosition=top;verticalAlign=bottom;html=1;outlineConnect=0;labelPosition=center;align=center;fillColor=#fff2cc;strokeColor=#d6b656;" value="Usuario final" vertex="1">
+          <mxGeometry height="60" width="30" x="26" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#fff2cc;strokeColor=#d6b656;" value="Usuario final" vertex="1">
+          <mxGeometry height="60" width="30" x="26" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-6" edge="1" parent="1" source="TWbTh4IrmaAo-LOvmZrs-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="TWbTh4IrmaAo-LOvmZrs-44">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="211" y="100" as="sourcePoint" />
+            <mxPoint x="211" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-23" edge="1" parent="1" source="TWbTh4IrmaAo-LOvmZrs-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="TWbTh4IrmaAo-LOvmZrs-46">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="385" y="100" as="sourcePoint" />
+            <mxPoint x="385" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-24" edge="1" parent="1" source="TWbTh4IrmaAo-LOvmZrs-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="TWbTh4IrmaAo-LOvmZrs-48">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="587" y="100" as="sourcePoint" />
+            <mxPoint x="587" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-25" edge="1" parent="1" source="TWbTh4IrmaAo-LOvmZrs-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="TWbTh4IrmaAo-LOvmZrs-50">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="705" y="100" as="sourcePoint" />
+            <mxPoint x="705" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-12" parent="1" style="shape=umlActor;verticalLabelPosition=top;verticalAlign=bottom;outlineConnect=0;html=1;labelPosition=center;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" value="Administrador&amp;nbsp;de&amp;nbsp;&lt;br&gt;sistemas" vertex="1">
+          <mxGeometry height="60" width="30" x="817" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-28" edge="1" parent="1" source="TWbTh4IrmaAo-LOvmZrs-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="TWbTh4IrmaAo-LOvmZrs-52">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="957" y="90" as="sourcePoint" />
+            <mxPoint x="957" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-14" parent="1" style="shape=umlActor;verticalLabelPosition=top;verticalAlign=bottom;html=1;outlineConnect=0;labelPosition=center;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Técnico de soporte" vertex="1">
+          <mxGeometry height="60" width="30" x="1098" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-17" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;" value="Administrador&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;de&lt;/span&gt;&lt;div&gt;sistemas&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="30" x="817" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-19" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Técnico de soporte" vertex="1">
+          <mxGeometry height="60" width="30" x="1098" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-27" edge="1" parent="1" source="TWbTh4IrmaAo-LOvmZrs-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;dashed=1;" target="TWbTh4IrmaAo-LOvmZrs-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-29" edge="1" parent="1" source="TWbTh4IrmaAo-LOvmZrs-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;dashed=1;" target="TWbTh4IrmaAo-LOvmZrs-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-30" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;align=center;" value="ingresar datos del incidente">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint x="41" y="140" as="sourcePoint" />
+            <mxPoint x="211" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-31" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" value="storeTicket(description, type)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint x="210" y="160" as="sourcePoint" />
+            <mxPoint x="380" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-32" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" value="createIncident(type, description)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint x="395" y="180" as="sourcePoint" />
+            <mxPoint x="580" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-33" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" value="incident">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="433" y="200" />
+            </Array>
+            <mxPoint x="571" y="200" as="sourcePoint" />
+            <mxPoint x="393" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-35" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" value="createTicket(user, incident)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint x="391" y="230" as="sourcePoint" />
+            <mxPoint x="701" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-36" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" value="ticket creado">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="701" y="259" as="sourcePoint" />
+            <mxPoint x="391" y="259" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-37" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" value="assignTicket(ticketId, technicianId)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint x="831" y="290" as="sourcePoint" />
+            <mxPoint x="391" y="289" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-38" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" value="assignTechnician(ticket, technician)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint x="393" y="320" as="sourcePoint" />
+            <mxPoint x="703" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-39" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" value="notifyTechnician(ticket)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint x="705" y="350" as="sourcePoint" />
+            <mxPoint x="956" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-40" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" value="notificar nuevo incidente">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint x="960" y="370" as="sourcePoint" />
+            <mxPoint x="1110" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-41" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" value="viewAssignedTickets()">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <mxPoint x="1113" y="401" as="sourcePoint" />
+            <mxPoint x="703" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-42" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" value="lista de tickets asignados">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="710" y="441" as="sourcePoint" />
+            <mxPoint x="1110" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-43" parent="1" style="html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" value="TicketView" vertex="1">
+          <mxGeometry height="42" width="104" x="159" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-44" parent="1" style="html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" value="TicketView" vertex="1">
+          <mxGeometry height="42" width="104" x="159" y="479" as="geometry" />
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-45" parent="1" style="html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" value="TicketController" vertex="1">
+          <mxGeometry height="42" width="104" x="340" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-46" parent="1" style="html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" value="TicketController" vertex="1">
+          <mxGeometry height="42" width="104" x="340" y="481" as="geometry" />
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-47" parent="1" style="html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" value="IncidentFactory" vertex="1">
+          <mxGeometry height="42" width="104" x="528" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-48" parent="1" style="html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" value="IncidentFactory" vertex="1">
+          <mxGeometry height="42" width="104" x="528" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-49" parent="1" style="html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" value="TicketManager" vertex="1">
+          <mxGeometry height="42" width="104" x="653" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-50" parent="1" style="html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" value="TicketManager" vertex="1">
+          <mxGeometry height="42" width="104" x="653" y="481" as="geometry" />
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-51" parent="1" style="html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" value="NotificationService" vertex="1">
+          <mxGeometry height="42" width="104" x="905" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TWbTh4IrmaAo-LOvmZrs-52" parent="1" style="html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" value="NotificationService" vertex="1">
+          <mxGeometry height="42" width="104" x="905" y="500" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
