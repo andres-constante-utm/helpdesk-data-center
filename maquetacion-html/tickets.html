@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tickets - Help Desk UTM</title>
+</head>
+
+<body>
+  <header>
+    <img src="assets/img/logo.png" alt="Logotipo Universidad Técnica de Manabí">
+    <h1>Sistema Help Desk - Data Center</h1>
+    <p>Universidad Técnica de Manabí</p>
+  </header>
+
+  <nav aria-label="Menú principal">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="reportar.html">Reportar Incidente</a></li>
+      <li><a href="tickets.html" aria-current="page">Ver Tickets</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Tickets Registrados</h2>
+
+      <article>
+        <h3>Tabla de Incidentes Registrados</h3>
+
+        <table>
+          <caption>Registro de incidentes técnicos - Data Center UTM</caption>
+          <thead>
+            <tr>
+              <th scope="col">ID Ticket</th>
+              <th scope="col">Título</th>
+              <th scope="col">Categoría</th>
+              <th scope="col">Prioridad</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Técnico asignado</th>
+              <th scope="col">Fecha de creación</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>TK-001</td>
+              <td>Fallo en switch de distribución piso 2</td>
+              <td>Red</td>
+              <td>Alta</td>
+              <td>En progreso</td>
+              <td>Andrés Constante Murillo</td>
+              <td>2026-05-20</td>
+            </tr>
+
+            <tr>
+              <td>TK-002</td>
+              <td>Disco duro degradado en servidor de respaldo</td>
+              <td>Hardware</td>
+              <td>Alta</td>
+              <td>Abierto</td>
+              <td>Virginia Intriago</td>
+              <td>2026-05-21</td>
+            </tr>
+
+            <tr>
+              <td>TK-003</td>
+              <td>Servicio de directorio activo no responde</td>
+              <td>Software</td>
+              <td>Media</td>
+              <td>Resuelto</td>
+              <td>Andrés Constante Murillo</td>
+              <td>2026-05-22</td>
+            </tr>
+
+            <tr>
+              <td>TK-004</td>
+              <td>Pérdida de conectividad en laboratorio de cómputo</td>
+              <td>Red</td>
+              <td>Media</td>
+              <td>Abierto</td>
+              <td>Virginia Intriago</td>
+              <td>2026-05-23</td>
+            </tr>
+
+            <tr>
+              <td>TK-005</td>
+              <td>Actualización fallida del sistema de virtualización</td>
+              <td>Software</td>
+              <td>Baja</td>
+              <td>Resuelto</td>
+              <td>Andrés Constante Murillo</td>
+              <td>2026-05-24</td>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <th colspan="7" scope="row">Total de tickets registrados: 5</th>
+            </tr>
+          </tfoot>
+        </table>
+      </article>
+
+      <article>
+        <h3>Descripción de Estados</h3>
+
+        <dl>
+          <dt>Abierto</dt>
+          <dd>
+            El incidente ha sido registrado y está pendiente de asignación o atención
+            por parte del equipo técnico.
+          </dd>
+
+          <dt>En progreso</dt>
+          <dd>
+            Un técnico ha sido asignado y se encuentra trabajando activamente en la
+            resolución del incidente.
+          </dd>
+
+          <dt>Resuelto</dt>
+          <dd>
+            El incidente fue atendido satisfactoriamente y el servicio afectado fue
+            restaurado o la solicitud completada.
+          </dd>
+        </dl>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Autor: Andrés Constante Murillo</p>
+    <p>Carrera: Ingeniería en Tecnologías de la Información</p>
+    <p>Universidad Técnica de Manabí - 2026</p>
+
+    <address>
+      Contacto:
+      <a href="mailto:aconstante6514@helpdesk.utm.edu.ec">
+        aconstante6514@helpdesk.utm.edu.ec
+      </a>
+    </address>
+
+    <p>
+      Repositorio GitHub:
+      <a href="https://github.com/andres-constante-utm/helpdesk-data-center">
+        Ver repositorio del proyecto
+      </a>
+    </p>
+  </footer>
+</body>
+
+</html>
