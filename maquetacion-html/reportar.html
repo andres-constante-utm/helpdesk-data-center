@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reportar Incidente - Help Desk UTM</title>
+</head>
+
+<body>
+  <header>
+    <img src="assets/img/logo.png" alt="Logotipo Universidad Técnica de Manabí">
+    <h1>Sistema Help Desk - Data Center</h1>
+    <p>Universidad Técnica de Manabí</p>
+  </header>
+
+  <nav aria-label="Menú principal">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="reportar.html" aria-current="page">Reportar Incidente</a></li>
+      <li><a href="tickets.html">Ver Tickets</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Reportar Nuevo Incidente</h2>
+
+      <article>
+        <h3>Formulario de Registro de Incidente</h3>
+
+        <p>
+          Complete el formulario a continuación para registrar un incidente técnico.
+          Todos los campos marcados son obligatorios. Un técnico será asignado una vez
+          procesada la solicitud.
+        </p>
+
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Datos del Incidente</legend>
+
+            <p>
+              <label for="titulo">Título del incidente</label>
+              <input type="text" id="titulo" name="titulo" required>
+            </p>
+
+            <p>
+              <label for="categoria">Categoría</label>
+              <select id="categoria" name="categoria" required>
+                <option value="">-- Seleccione una categoría --</option>
+                <option value="red">Red</option>
+                <option value="hardware">Hardware</option>
+                <option value="software">Software</option>
+              </select>
+            </p>
+
+            <fieldset>
+              <legend>Prioridad</legend>
+
+              <p>
+                <input type="radio" id="prioridad-alta" name="prioridad" value="alta" required>
+                <label for="prioridad-alta">Alta</label>
+              </p>
+
+              <p>
+                <input type="radio" id="prioridad-media" name="prioridad" value="media">
+                <label for="prioridad-media">Media</label>
+              </p>
+
+              <p>
+                <input type="radio" id="prioridad-baja" name="prioridad" value="baja">
+                <label for="prioridad-baja">Baja</label>
+              </p>
+            </fieldset>
+
+            <p>
+              <label for="descripcion">Descripción detallada</label>
+              <textarea id="descripcion" name="descripcion" rows="6" required></textarea>
+            </p>
+
+            <p>
+              <label for="solicitante">Nombre del solicitante</label>
+              <input type="text" id="solicitante" name="solicitante" required>
+            </p>
+
+            <p>
+              <label for="correo">Correo electrónico</label>
+              <input type="email" id="correo" name="correo" required>
+            </p>
+          </fieldset>
+          <p>
+            <button type="submit">Enviar solicitud</button>
+            <button type="reset">Limpiar formulario</button>
+          </p>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Autor: Andrés Constante Murillo</p>
+    <p>Carrera: Ingeniería en Tecnologías de la Información</p>
+    <p>Universidad Técnica de Manabí - 2026</p>
+
+    <address>
+      Contacto:
+      <a href="mailto:aconstante6514@helpdesk.utm.edu.ec">
+        aconstante6514@helpdesk.utm.edu.ec
+      </a>
+    </address>
+
+    <p>
+      Repositorio GitHub:
+      <a href="https://github.com/andres-constante-utm/helpdesk-data-center">
+        Ver repositorio del proyecto
+      </a>
+    </p>
+  </footer>
+</body>
+
+</html>
