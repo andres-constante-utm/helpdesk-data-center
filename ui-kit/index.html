@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Kit - Help Desk Data Center</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>UI Kit - Help Desk Data Center</h1>
+    <p>Catálogo de componentes del Design System, construido con CSS3 puro.</p>
+  </header>
+
+  <main>
+
+    <!-- 1. Paleta de colores -->
+    <section id="paleta-colores">
+      <h2>1. Paleta de colores</h2>
+      <div class="paleta-grupo">
+        <div>
+          <div class="paleta-muestra paleta-muestra-primario"></div>
+          <p>--color-primario</p>
+        </div>
+        <div>
+          <div class="paleta-muestra paleta-muestra-secundario"></div>
+          <p>--color-secundario</p>
+        </div>
+        <div>
+          <div class="paleta-muestra paleta-muestra-exito"></div>
+          <p>--color-exito</p>
+        </div>
+        <div>
+          <div class="paleta-muestra paleta-muestra-error"></div>
+          <p>--color-error</p>
+        </div>
+        <div>
+          <div class="paleta-muestra paleta-muestra-advertencia"></div>
+          <p>--color-advertencia</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Tipografía -->
+    <section id="tipografia">
+      <h2>2. Tipografía</h2>
+      <h1>Título h1 - Help Desk Data Center</h1>
+      <h2>Título h2 - Sección de ejemplo</h2>
+      <p>Texto de párrafo normal usando la fuente base del sistema (--fuente-base) y el tamaño de texto base (--tamano-texto-base) definidos en las variables globales.</p>
+    </section>
+
+    <!-- 3. Botones -->
+    <section id="botones">
+      <h2>3. Botones</h2>
+      <button class="btn-primario">Botón Primario</button>
+      <button class="btn-secundario">Botón Secundario</button>
+      <button class="btn-peligro">Botón Peligro</button>
+    </section>
+
+    <!-- 4. Formularios -->
+    <section id="formularios">
+      <h2>4. Formularios</h2>
+      <div>
+        <label for="asunto">Asunto del ticket</label>
+        <input type="text" id="asunto" name="asunto" placeholder="Escribe el asunto del incidente">
+      </div>
+      <br>
+      <div>
+        <label for="prioridad">Prioridad</label>
+        <select id="prioridad" name="prioridad">
+          <option value="alta">Alta</option>
+          <option value="media">Media</option>
+          <option value="baja">Baja</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- 5. Tarjeta de ticket de ejemplo -->
+    <section id="tarjeta-ticket">
+      <h2>5. Tarjeta de ticket de ejemplo</h2>
+      <div class="card">
+        <h3>Ticket #1024</h3>
+        <p><strong>Incidente:</strong> Servidor de respaldo sin conexión</p>
+        <p><strong>Técnico asignado:</strong> Andrés Constante</p>
+        <p><strong>Prioridad:</strong> <span class="badge-alta">Alta</span></p>
+      </div>
+    </section>
+
+    <!-- 6. Badges de prioridad -->
+    <section id="badges-prioridad">
+      <h2>6. Badges de prioridad</h2>
+      <span class="badge-alta">Alta</span>
+      <span class="badge-media">Media</span>
+      <span class="badge-baja">Baja</span>
+    </section>
+
+  </main>
+</body>
+</html>

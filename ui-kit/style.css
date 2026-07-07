@@ -1,0 +1,234 @@
+/* ==========================================================================
+   DESIGN SYSTEM - HELP DESK DATA CENTER
+   Actividad #5 - Librería de componentes UI con CSS3 puro
+   Andrés Gonzalo Constante Murillo
+   ========================================================================== */
+
+/* ==========================================================================
+   1. VARIABLES GLOBALES (:root)
+   ========================================================================== */
+:root {
+  /* Paleta de colores corporativa */
+  --color-primario: #0d6efd;
+  --color-secundario: #6c757d;
+  --color-exito: #198754;
+  --color-error: #dc3545;
+  --color-advertencia: #ffc107;
+
+  /* Colores de apoyo */
+  --color-texto: #212529;
+  --color-fondo: #f8f9fa;
+  --color-blanco: #ffffff;
+  --color-borde: #ced4da;
+
+  /* Tipografía */
+  --fuente-base: Arial, Helvetica, sans-serif;
+  --tamano-texto-base: 16px;
+  --tamano-texto-titulo: 28px;
+  --tamano-texto-subtitulo: 20px;
+
+  /* Bordes y sombras reutilizables */
+  --radio-borde: 6px;
+  --sombra-suave: 0 2px 6px rgba(0, 0, 0, 0.15);
+  --sombra-foco: 0 0 0 3px rgba(13, 110, 253, 0.35);
+}
+
+/* ==========================================================================
+   2. BOX MODEL (box-sizing con herencia)
+   ========================================================================== */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* ==========================================================================
+   3. TIPOGRAFÍA BASE
+   ========================================================================== */
+body {
+  font-family: var(--fuente-base);
+  font-size: var(--tamano-texto-base);
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: var(--tamano-texto-titulo);
+}
+
+h2 {
+  font-size: var(--tamano-texto-subtitulo);
+  border-bottom: 2px solid var(--color-borde);
+  padding-bottom: 8px;
+}
+
+/* ==========================================================================
+   4. PALETA DE COLORES (muestras)
+   ========================================================================== */
+.paleta-grupo {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.paleta-muestra {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radio-borde);
+}
+
+.paleta-muestra-primario {
+  background-color: var(--color-primario);
+}
+
+.paleta-muestra-secundario {
+  background-color: var(--color-secundario);
+}
+
+.paleta-muestra-exito {
+  background-color: var(--color-exito);
+}
+
+.paleta-muestra-error {
+  background-color: var(--color-error);
+}
+
+.paleta-muestra-advertencia {
+  background-color: var(--color-advertencia);
+}
+
+/* ==========================================================================
+   5. BOTONES
+   ========================================================================== */
+.btn-primario,
+.btn-secundario,
+.btn-peligro {
+  font-family: var(--fuente-base);
+  font-size: var(--tamano-texto-base);
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radio-borde);
+  cursor: pointer;
+  color: var(--color-blanco);
+}
+
+.btn-primario {
+  background-color: var(--color-primario);
+}
+
+.btn-primario:hover {
+  background-color: #0b5ed7;
+}
+
+.btn-primario:focus {
+  outline: none;
+  box-shadow: var(--sombra-foco);
+}
+
+.btn-secundario {
+  background-color: var(--color-secundario);
+}
+
+.btn-secundario:hover {
+  background-color: #5c636a;
+}
+
+.btn-secundario:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(108, 117, 125, 0.35);
+}
+
+.btn-peligro {
+  background-color: var(--color-error);
+}
+
+.btn-peligro:hover {
+  background-color: #bb2d3b;
+}
+
+.btn-peligro:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.35);
+}
+
+/* ==========================================================================
+   6. FORMULARIOS
+   ========================================================================== */
+input[type="text"],
+select {
+  font-family: var(--fuente-base);
+  font-size: var(--tamano-texto-base);
+  padding: 8px 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  background-color: var(--color-blanco);
+  color: var(--color-texto);
+  width: 100%;
+  max-width: 300px;
+}
+
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: var(--sombra-foco);
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   7. TARJETAS (CARD)
+   ========================================================================== */
+.card {
+  background-color: var(--color-blanco);
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-suave);
+  padding: 16px;
+  max-width: 320px;
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.card p {
+  margin: 4px 0;
+}
+
+/* ==========================================================================
+   8. BADGES DE PRIORIDAD
+   ========================================================================== */
+.badge-alta,
+.badge-media,
+.badge-baja {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: var(--radio-borde);
+  color: var(--color-blanco);
+  font-size: 14px;
+}
+
+.badge-alta {
+  background-color: var(--color-error);
+}
+
+.badge-media {
+  background-color: var(--color-advertencia);
+  color: var(--color-texto);
+}
+
+.badge-baja {
+  background-color: var(--color-exito);
+}
