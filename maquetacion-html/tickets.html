@@ -5,31 +5,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lista de Tickets - Help Desk UTM</title>
+  <link rel="stylesheet" href="../ui-kit/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 
 <body>
-  <header>
+  <header class="layout site-header">
     <img src="assets/img/logo.png" alt="Logotipo Universidad Técnica de Manabí">
-    <h1>Sistema Help Desk - Data Center</h1>
-    <p>Universidad Técnica de Manabí</p>
+    <div class="header-texto">
+      <h1>Sistema Help Desk - Data Center</h1>
+      <p>Universidad Técnica de Manabí</p>
+    </div>
   </header>
 
-  <nav aria-label="Menú principal">
-    <ul>
+  <nav class="layout" aria-label="Menú principal">
+    <ul class="menu">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="reportar.html">Reportar Incidente</a></li>
       <li><a href="tickets.html" aria-current="page">Ver Tickets</a></li>
     </ul>
   </nav>
 
-  <main>
+  <main class="layout">
     <section>
       <h2>Tickets Registrados</h2>
 
       <article>
         <h3>Tabla de Incidentes Registrados</h3>
 
-        <table>
+        <div class="table-responsive">
+          <table>
           <caption>Registro de incidentes técnicos - Data Center UTM</caption>
           <thead>
             <tr>
@@ -48,7 +53,7 @@
               <td>TK-001</td>
               <td>Fallo en switch de distribución piso 2</td>
               <td>Red</td>
-              <td>Alta</td>
+              <td><span class="badge-alta">Alta</span></td>
               <td>En progreso</td>
               <td>Andrés Constante Murillo</td>
               <td>2026-05-20</td>
@@ -58,7 +63,7 @@
               <td>TK-002</td>
               <td>Disco duro degradado en servidor de respaldo</td>
               <td>Hardware</td>
-              <td>Alta</td>
+              <td><span class="badge-alta">Alta</span></td>
               <td>Abierto</td>
               <td>Virginia Intriago</td>
               <td>2026-05-21</td>
@@ -68,7 +73,7 @@
               <td>TK-003</td>
               <td>Servicio de directorio activo no responde</td>
               <td>Software</td>
-              <td>Media</td>
+              <td><span class="badge-media">Media</span></td>
               <td>Resuelto</td>
               <td>Andrés Constante Murillo</td>
               <td>2026-05-22</td>
@@ -78,7 +83,7 @@
               <td>TK-004</td>
               <td>Pérdida de conectividad en laboratorio de cómputo</td>
               <td>Red</td>
-              <td>Media</td>
+              <td><span class="badge-media">Media</span></td>
               <td>Abierto</td>
               <td>Virginia Intriago</td>
               <td>2026-05-23</td>
@@ -88,7 +93,7 @@
               <td>TK-005</td>
               <td>Actualización fallida del sistema de virtualización</td>
               <td>Software</td>
-              <td>Baja</td>
+              <td><span class="badge-baja">Baja</span></td>
               <td>Resuelto</td>
               <td>Andrés Constante Murillo</td>
               <td>2026-05-24</td>
@@ -100,7 +105,8 @@
               <td colspan="7">Total de tickets registrados: 5</td>
             </tr>
           </tfoot>
-        </table>
+          </table>
+        </div>
       </article>
 
       <article>
@@ -129,7 +135,7 @@
     </section>
   </main>
 
-  <footer>
+  <footer class="layout">
     <p>Autor: Andrés Constante Murillo</p>
     <p>Carrera: Ingeniería en Tecnologías de la Información</p>
     <p>Universidad Técnica de Manabí - 2026</p>

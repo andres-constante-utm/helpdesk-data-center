@@ -1,0 +1,239 @@
+/* ==========================================================================
+   LAYOUT RESPONSIVE - HELP DESK DATA CENTER
+   Actividad #6 - Integra el UI Kit (ui-kit/style.css) y agrega el layout
+   flexible. Todos los colores y medidas reutilizan las variables definidas
+   en :root dentro de ui-kit/style.css.
+   ========================================================================== */
+
+/* ==========================================================================
+   1. CONTENEDOR GENERAL (.layout)
+   ========================================================================== */
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+main.layout section {
+  margin-bottom: 32px;
+}
+
+/* ==========================================================================
+   2. ENCABEZADO (header)
+   ========================================================================== */
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.site-header img {
+  height: 56px;
+  width: auto;
+}
+
+/* ==========================================================================
+   3. NAVEGACIÓN (Flexbox)
+   ========================================================================== */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 12px 0;
+  border-top: 1px solid var(--color-borde);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.menu a {
+  color: var(--color-primario);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   4. DASHBOARD (CSS Grid)
+   ========================================================================== */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 16px;
+}
+
+/* ==========================================================================
+   5. FORMULARIO (CSS Grid)
+   ========================================================================== */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.form-grid .campo-completo {
+  grid-column: 1 / -1;
+}
+
+/* ui-kit/style.css solo define el borde/padding/ancho para input[type="text"];
+   se replica aquí para que el campo de correo (input[type="email"]) luzca igual */
+input[type="email"] {
+  font-family: var(--fuente-base);
+  font-size: var(--tamano-texto-base);
+  padding: 8px 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  background-color: var(--color-blanco);
+  color: var(--color-texto);
+  width: 100%;
+  max-width: 300px;
+}
+
+input[type="email"]:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: var(--sombra-foco);
+}
+
+/* Alinea cada radio button de Prioridad en la misma línea que su etiqueta
+   (ui-kit define label { display: block }, aquí se ajusta solo para este grupo) */
+fieldset.campo-completo p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+fieldset.campo-completo label {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.form-grid textarea {
+  font-family: var(--fuente-base);
+  font-size: var(--tamano-texto-base);
+  padding: 8px 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  background-color: var(--color-blanco);
+  color: var(--color-texto);
+  width: 100%;
+  resize: vertical;
+}
+
+.form-grid textarea:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: var(--sombra-foco);
+}
+
+.form-acciones {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* ==========================================================================
+   6. TABLA RESPONSIVA
+   ========================================================================== */
+.table-responsive {
+  overflow-x: auto;
+  margin-top: 16px;
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-suave);
+}
+
+.table-responsive table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-blanco);
+}
+
+.table-responsive th,
+.table-responsive td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--color-borde);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table-responsive thead {
+  background-color: var(--color-fondo);
+}
+
+/* ==========================================================================
+   7. PIE DE PÁGINA (footer)
+   ========================================================================== */
+footer.layout {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 24px;
+  border-top: 1px solid var(--color-borde);
+  text-align: center;
+}
+
+/* ==========================================================================
+   8. MEDIA QUERY - TABLETS (max-width: 992px)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid .campo-completo {
+    grid-column: 1;
+  }
+}
+
+/* ==========================================================================
+   9. MEDIA QUERY - MÓVILES (max-width: 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select,
+  .form-grid textarea {
+    max-width: none;
+  }
+
+  .form-acciones {
+    flex-direction: column;
+  }
+
+  .btn-primario,
+  .btn-secundario,
+  .btn-peligro {
+    width: 100%;
+  }
+
+  .table-responsive table {
+    min-width: 700px;
+  }
+}

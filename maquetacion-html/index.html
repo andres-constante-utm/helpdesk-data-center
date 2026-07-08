@@ -5,24 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Help Desk Data Center — UTM</title>
+  <link rel="stylesheet" href="../ui-kit/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 
 <body>
-  <header>
+  <header class="layout site-header">
     <img src="assets/img/logo.png" alt="Logotipo Universidad Técnica de Manabí">
-    <h1>Sistema Help Desk — Data Center</h1>
-    <p>Universidad Técnica de Manabí</p>
+    <div class="header-texto">
+      <h1>Sistema Help Desk — Data Center</h1>
+      <p>Universidad Técnica de Manabí</p>
+    </div>
   </header>
 
-  <nav>
-    <ul>
+  <nav class="layout">
+    <ul class="menu">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="reportar.html">Reportar Incidente</a></li>
       <li><a href="tickets.html">Ver Tickets</a></li>
     </ul>
   </nav>
 
-  <main>
+  <main class="layout">
     <section>
       <h2>Bienvenido al Sistema Help Desk</h2>
       <p>
@@ -38,23 +42,25 @@
     <section>
       <h2>Resumen Estadístico</h2>
 
-      <article>
-        <h3>Tickets Activos</h3>
-        <p>12</p>
-        <p>Incidentes actualmente abiertos o en progreso que requieren atención del equipo técnico.</p>
-      </article>
+      <div class="dashboard-grid">
+        <article class="card">
+          <h3>Tickets Activos</h3>
+          <p>12</p>
+          <p>Incidentes actualmente abiertos o en progreso que requieren atención del equipo técnico.</p>
+        </article>
 
-      <article>
-        <h3>Tickets Resueltos Hoy</h3>
-        <p>5</p>
-        <p>Incidentes cerrados satisfactoriamente durante la jornada del día de hoy.</p>
-      </article>
+        <article class="card">
+          <h3>Tickets Resueltos Hoy</h3>
+          <p>5</p>
+          <p>Incidentes cerrados satisfactoriamente durante la jornada del día de hoy.</p>
+        </article>
 
-      <article>
-        <h3>Técnicos Disponibles</h3>
-        <p>2</p>
-        <p>Personal técnico activo en turno: Carlos Méndez y María Torres.</p>
-      </article>
+        <article class="card">
+          <h3>Técnicos Disponibles</h3>
+          <p>2</p>
+          <p>Personal técnico activo en turno: Carlos Méndez y María Torres.</p>
+        </article>
+      </div>
     </section>
 
     <section>
@@ -66,7 +72,7 @@
     </section>
   </main>
 
-  <footer>
+  <footer class="layout">
     <p>Autor: Andrés Constante Murillo</p>
     <p>Carrera: Ingeniería en Tecnologías de la Información</p>
     <p>Universidad Técnica de Manabí — 2026</p>

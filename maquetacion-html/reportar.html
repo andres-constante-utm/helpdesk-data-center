@@ -5,24 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reportar Incidente - Help Desk UTM</title>
+  <link rel="stylesheet" href="../ui-kit/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 
 <body>
-  <header>
+  <header class="layout site-header">
     <img src="assets/img/logo.png" alt="Logotipo Universidad Técnica de Manabí">
-    <h1>Sistema Help Desk - Data Center</h1>
-    <p>Universidad Técnica de Manabí</p>
+    <div class="header-texto">
+      <h1>Sistema Help Desk - Data Center</h1>
+      <p>Universidad Técnica de Manabí</p>
+    </div>
   </header>
 
-  <nav aria-label="Menú principal">
-    <ul>
+  <nav class="layout" aria-label="Menú principal">
+    <ul class="menu">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="reportar.html" aria-current="page">Reportar Incidente</a></li>
       <li><a href="tickets.html">Ver Tickets</a></li>
     </ul>
   </nav>
 
-  <main>
+  <main class="layout">
     <section>
       <h2>Reportar Nuevo Incidente</h2>
 
@@ -36,7 +40,7 @@
         </p>
 
         <form action="#" method="post">
-          <fieldset>
+          <fieldset class="form-grid">
             <legend>Datos del Incidente</legend>
 
             <p>
@@ -54,7 +58,7 @@
               </select>
             </p>
 
-            <fieldset>
+            <fieldset class="campo-completo">
               <legend>Prioridad</legend>
 
               <p>
@@ -73,7 +77,7 @@
               </p>
             </fieldset>
 
-            <p>
+            <p class="campo-completo">
               <label for="descripcion">Descripción detallada</label>
               <textarea id="descripcion" name="descripcion" rows="6" required></textarea>
             </p>
@@ -88,16 +92,16 @@
               <input type="email" id="correo" name="correo" required>
             </p>
           </fieldset>
-          <p>
-            <button type="submit">Enviar solicitud</button>
-            <button type="reset">Limpiar formulario</button>
+          <p class="form-acciones">
+            <button type="submit" class="btn-primario">Enviar solicitud</button>
+            <button type="reset" class="btn-secundario">Limpiar formulario</button>
           </p>
         </form>
       </article>
     </section>
   </main>
 
-  <footer>
+  <footer class="layout">
     <p>Autor: Andrés Constante Murillo</p>
     <p>Carrera: Ingeniería en Tecnologías de la Información</p>
     <p>Universidad Técnica de Manabí - 2026</p>
