@@ -1,0 +1,543 @@
+{
+  "info": {
+    "_postman_id": "38373fa3-c76f-40a2-b5ce-4492827ac092",
+    "name": "HelpDeskAPI",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57031182",
+    "_collection_link": "https://go.postman.co/collection/57031182-38373fa3-c76f-40a2-b5ce-4492827ac092?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "001_Login Administrador",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"correo\": \"admin@helpdesk.utm.edu.ec\",\n  \"password\": \"Admin2026!\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "002_Administrador Crear Usuario Andrés",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{supabase_service_role_api_key_0thw}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre_completo\": \"Andrés Constante Murillo\",\n  \"correo\": \"aconstante6514@utm.edu.ec\",\n  \"password\": \"Usuario2026!\",\n  \"rol_id\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/usuarios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "usuarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "003_Administrador Crear Usuario María",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token_0thw}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre_completo\": \"María Loor\",\n  \"correo\": \"maria.loor@utm.edu.ec\",\n  \"password\": \"Tecnico2026!\",\n  \"rol_id\": 2\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/usuarios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "usuarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "004_LoginAndres",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"correo\": \"aconstante6514@utm.edu.ec\",\n  \"password\": \"Usuario2026!\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "005_Andres_Crea_Ticket",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{bearer_token_0hsu}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"No enciende el monitor de la sala de servidores\",\n  \"descripcion\": \"El monitor 2 del rack principal no enciende desde esta mañana\",\n  \"categoria_id\": 2,\n  \"prioridad_id\": 3\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/tickets",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "tickets"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "006_Asignar_Ticket",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{bearer_token_02ag}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"tecnico_asignado_id\": 3\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/tickets/1/asignar",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "tickets",
+            "1",
+            "asignar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "007_Historial_x_Administrador",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{supabase_service_role_api_key_1dpj}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/tickets/1/historial",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "tickets",
+            "1",
+            "historial"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "008_Login_María",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"correo\": \"maria.loor@utm.edu.ec\",\n  \"password\": \"Tecnico2026!\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "auth",
+            "login"
+          ]
+        },
+        "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+      },
+      "response": []
+    },
+    {
+      "name": "009_Tickets_Asignados_x_Maria",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{supabase_service_role_api_key_0d98}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/tickets/asignados",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "tickets",
+            "asignados"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "010_Maria_cambia_estado",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token_0d98}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"estado_id\": 2\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/tickets/1/estado",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "tickets",
+            "1",
+            "estado"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "011_Maria_contesta_ticket",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{supabase_service_role_api_key_0d98}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"solucion\": \"Se reemplazó el cable HDMI dañado del monitor 2. Prueba de encendido exitosa.\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/tickets/1/solucion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "tickets",
+            "1",
+            "solucion"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "012_Maria_consulta_historial",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token_0d98}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/tickets/1/historial",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "tickets",
+            "1",
+            "historial"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "bearer_token_0we6",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0xhz",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0xhz",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_0m7r",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0xu4",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0y6t",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_0vbt",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_0bvs",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_10cs",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_10cs",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0thw",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_13mh",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0thw",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_0hsu",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_09dr",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_02ag",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0gj6",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_1dpj",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_08lr",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0d98",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_1b8t",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0d98",
+      "secret": true
+    }
+  ]
+}
