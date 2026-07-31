@@ -448,6 +448,91 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "013_Andres_crea_ticket",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sIjoiVVNVQVJJTyIsImlhdCI6MTc4NTQ3NzgyMiwiZXhwIjoxNzg1NTA2NjIyfQ.vEnUsqqu8Q1ds2Qyx8FCUv1xT66hufe16oWHeJN5SmU",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Ticket de prueba para eliminar\",\n  \"descripcion\": \"Este ticket se crea únicamente para probar el endpoint DELETE\",\n  \"categoria_id\": 3,\n  \"prioridad_id\": 2\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/tickets",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "tickets"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "014_Admin_elimina_ticket",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU5JU1RSQURPUiIsImlhdCI6MTc4NTQ3ODE3NiwiZXhwIjoxNzg1NTA2OTc2fQ.ouB6qeKB96ikwWDJobPQYKGwObOQrC6TWjCFejqywl4",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/tickets/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "tickets",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "015_consultar_ticket_2",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiQURNSU5JU1RSQURPUiIsImlhdCI6MTc4NTQ3ODE3NiwiZXhwIjoxNzg1NTA2OTc2fQ.ouB6qeKB96ikwWDJobPQYKGwObOQrC6TWjCFejqywl4",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/tickets",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "tickets"
+          ]
+        }
+      },
+      "response": []
     }
   ],
   "variable": [
