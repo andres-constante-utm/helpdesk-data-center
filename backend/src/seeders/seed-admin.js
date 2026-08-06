@@ -6,12 +6,14 @@ async function seedAdmin() {
   const rolAdmin = await Rol.findOne({ where: { nombre: 'ADMINISTRADOR' } });
   if (!rolAdmin) {
     console.error('No existe el rol ADMINISTRADOR. Corre primero seed.js');
+    await sequelize.close();
     process.exit(1);
   }
 
   const existente = await Usuario.findOne({ where: { correo: 'admin@helpdesk.utm.edu.ec' } });
   if (existente) {
     console.log('El usuario administrador ya existe.');
+    await sequelize.close();
     process.exit(0);
   }
 
@@ -23,6 +25,7 @@ async function seedAdmin() {
   });
 
   console.log('Usuario administrador creado: admin@helpdesk.utm.edu.ec / Admin2026!');
+  await sequelize.close();
   process.exit(0);
 }
 

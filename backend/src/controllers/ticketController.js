@@ -168,6 +168,51 @@ async function eliminarTicket(req, res) {
   }
 }
 
+// Obtiene un ticket puntual por su ID
+async function obtenerTicketPorId(req, res) {
+  try {
+    const ticket = await Ticket.findByPk(req.params.id, { include: includeTicket });
+
+    if (!ticket) {
+      return res.status(404).json({ mensaje: 'Ticket no encontrado' });
+    }
+
+    return res.json(ticket);
+  } catch (error) {
+    return res.status(500).json({ mensaje: 'Error al consultar el ticket', error: error.message });
+  }
+}
+
+// Actualiza campos generales de un ticket (no permite cambiar estado_id ni tecnico_asignado_id)
+async function actualizarTicket(req, res) {
+  try {
+    const ticket = await Ticket.findByPk(req.params.id);
+    if (!ticket) {
+      return res.status(404).json({ mensaje: 'Ticket no encontrado' });
+    }
+
+    const camposPermitidos = ['titulo', 'descripcion', 'categoria_id', 'prioridad_id'];
+    const datosActualizacion = {};
+
+    camposPermitidos.forEach((campo) => {
+      if (req.body[campo] !== undefined) {
+        datosActualizacion[campo] = req.body[campo];
+      }
+    });
+
+    if (Object.keys(datosActualizacion).length === 0) {
+      return res.status(400).json({ mensaje: 'No se proporcionaron campos válidos para actualizar' });
+    }
+
+    await ticket.update(datosActualizacion);
+
+    const ticketActualizado = await Ticket.findByPk(ticket.id, { include: includeTicket });
+    return res.json(ticketActualizado);
+  } catch (error) {
+    return res.status(400).json({ mensaje: 'Error al actualizar el ticket', error: error.message });
+  }
+}
+
 // Devuelve el historial de acciones de un ticket
 async function historialTicket(req, res) {
   const ticket = await Ticket.findByPk(req.params.id);
@@ -193,5 +238,7 @@ module.exports = {
   listarTickets,
   asignarTecnico,
   eliminarTicket,
-  historialTicket
+  historialTicket,
+  obtenerTicketPorId,
+  actualizarTicket
 };

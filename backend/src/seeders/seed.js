@@ -37,9 +37,11 @@ async function seed() {
     ], { ignoreDuplicates: true });
 
     console.log('Seed completado: roles, categorías, prioridades y estados de ticket cargados.');
+    await sequelize.close();
     process.exit(0);
   } catch (error) {
     console.error('Error al ejecutar el seed:', error);
+    await sequelize.close();
     process.exit(1);
   }
 }
