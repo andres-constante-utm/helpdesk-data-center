@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  justify-content: center;
+  padding-top: 64px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+}

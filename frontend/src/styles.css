@@ -1,1 +1,517 @@
-/* You can add global styles to this file, and also import other style files */
+/* ==========================================================================
+   DESIGN SYSTEM - HELP DESK DATA CENTER
+   Actividad #5 - Librería de componentes UI con CSS3 puro
+   Andrés Gonzalo Constante Murillo
+   ========================================================================== */
+
+/* ==========================================================================
+   1. VARIABLES GLOBALES (:root)
+   ========================================================================== */
+:root {
+  /* Paleta de colores corporativa */
+  --color-primario: #0d6efd;
+  --color-secundario: #6c757d;
+  --color-exito: #198754;
+  --color-error: #dc3545;
+  --color-advertencia: #ffc107;
+
+  /* Colores de apoyo */
+  --color-texto: #212529;
+  --color-fondo: #f8f9fa;
+  --color-blanco: #ffffff;
+  --color-borde: #ced4da;
+
+  /* Tipografía */
+  --fuente-base: Arial, Helvetica, sans-serif;
+  --tamano-texto-base: 16px;
+  --tamano-texto-titulo: 28px;
+  --tamano-texto-subtitulo: 20px;
+
+  /* Bordes y sombras reutilizables */
+  --radio-borde: 6px;
+  --sombra-suave: 0 2px 6px rgba(0, 0, 0, 0.15);
+  --sombra-foco: 0 0 0 3px rgba(13, 110, 253, 0.35);
+}
+
+/* ==========================================================================
+   2. BOX MODEL (box-sizing con herencia)
+   ========================================================================== */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* ==========================================================================
+   3. TIPOGRAFÍA BASE
+   ========================================================================== */
+body {
+  font-family: var(--fuente-base);
+  font-size: var(--tamano-texto-base);
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: var(--tamano-texto-titulo);
+}
+
+h2 {
+  font-size: var(--tamano-texto-subtitulo);
+  border-bottom: 2px solid var(--color-borde);
+  padding-bottom: 8px;
+}
+
+/* ==========================================================================
+   4. PALETA DE COLORES (muestras)
+   ========================================================================== */
+.paleta-grupo {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.paleta-muestra {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radio-borde);
+}
+
+.paleta-muestra-primario {
+  background-color: var(--color-primario);
+}
+
+.paleta-muestra-secundario {
+  background-color: var(--color-secundario);
+}
+
+.paleta-muestra-exito {
+  background-color: var(--color-exito);
+}
+
+.paleta-muestra-error {
+  background-color: var(--color-error);
+}
+
+.paleta-muestra-advertencia {
+  background-color: var(--color-advertencia);
+}
+
+/* ==========================================================================
+   5. BOTONES
+   ========================================================================== */
+.btn-primario,
+.btn-secundario,
+.btn-peligro {
+  font-family: var(--fuente-base);
+  font-size: var(--tamano-texto-base);
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radio-borde);
+  cursor: pointer;
+  color: var(--color-blanco);
+}
+
+.btn-primario {
+  background-color: var(--color-primario);
+}
+
+.btn-primario:hover {
+  background-color: #0b5ed7;
+}
+
+.btn-primario:focus {
+  outline: none;
+  box-shadow: var(--sombra-foco);
+}
+
+.btn-secundario {
+  background-color: var(--color-secundario);
+}
+
+.btn-secundario:hover {
+  background-color: #5c636a;
+}
+
+.btn-secundario:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(108, 117, 125, 0.35);
+}
+
+.btn-peligro {
+  background-color: var(--color-error);
+}
+
+.btn-peligro:hover {
+  background-color: #bb2d3b;
+}
+
+.btn-peligro:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.35);
+}
+
+.btn-primario:disabled,
+.btn-secundario:disabled,
+.btn-peligro:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   6. FORMULARIOS
+   ========================================================================== */
+input[type="text"],
+select {
+  font-family: var(--fuente-base);
+  font-size: var(--tamano-texto-base);
+  padding: 8px 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  background-color: var(--color-blanco);
+  color: var(--color-texto);
+  width: 100%;
+  max-width: 300px;
+}
+
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: var(--sombra-foco);
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   7. TARJETAS (CARD)
+   ========================================================================== */
+.card {
+  background-color: var(--color-blanco);
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-suave);
+  padding: 16px;
+  max-width: 320px;
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.card p {
+  margin: 4px 0;
+}
+
+/* ==========================================================================
+   8. BADGES DE PRIORIDAD
+   ========================================================================== */
+.badge-alta,
+.badge-media,
+.badge-baja {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: var(--radio-borde);
+  color: var(--color-blanco);
+  font-size: 14px;
+}
+
+.badge-alta {
+  background-color: var(--color-error);
+}
+
+.badge-media {
+  background-color: var(--color-advertencia);
+  color: var(--color-texto);
+}
+
+.badge-baja {
+  background-color: var(--color-exito);
+}
+
+/* ==========================================================================
+   LAYOUT RESPONSIVE - HELP DESK DATA CENTER
+   Actividad #6 - Integra el UI Kit y agrega el layout flexible. Todos los
+   colores y medidas reutilizan las variables definidas en :root arriba.
+   ========================================================================== */
+
+/* ==========================================================================
+   9. CONTENEDOR GENERAL (.layout)
+   ========================================================================== */
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+main.layout section {
+  margin-bottom: 32px;
+}
+
+/* ==========================================================================
+   10. ENCABEZADO (header)
+   ========================================================================== */
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.site-header img {
+  height: 56px;
+  width: auto;
+}
+
+/* ==========================================================================
+   11. NAVEGACIÓN (Flexbox)
+   ========================================================================== */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 12px 0;
+  border-top: 1px solid var(--color-borde);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.menu a {
+  color: var(--color-primario);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   12. DASHBOARD (CSS Grid)
+   ========================================================================== */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 16px;
+}
+
+/* ==========================================================================
+   13. FORMULARIO (CSS Grid)
+   ========================================================================== */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.form-grid .campo-completo {
+  grid-column: 1 / -1;
+}
+
+/* ui-kit solo define el borde/padding/ancho para input[type="text"];
+   se replica aquí para que los campos de correo y contraseña luzcan igual */
+input[type="email"],
+input[type="password"] {
+  font-family: var(--fuente-base);
+  font-size: var(--tamano-texto-base);
+  padding: 8px 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  background-color: var(--color-blanco);
+  color: var(--color-texto);
+  width: 100%;
+  max-width: 300px;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: var(--sombra-foco);
+}
+
+/* Alinea cada radio button de Prioridad en la misma línea que su etiqueta
+   (ui-kit define label { display: block }, aquí se ajusta solo para este grupo) */
+fieldset.campo-completo p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+fieldset.campo-completo label {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.form-grid textarea {
+  font-family: var(--fuente-base);
+  font-size: var(--tamano-texto-base);
+  padding: 8px 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  background-color: var(--color-blanco);
+  color: var(--color-texto);
+  width: 100%;
+  resize: vertical;
+}
+
+.form-grid textarea:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: var(--sombra-foco);
+}
+
+.form-acciones {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* ==========================================================================
+   14. TABLA RESPONSIVA
+   ========================================================================== */
+.table-responsive {
+  overflow-x: auto;
+  margin-top: 16px;
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-suave);
+}
+
+.table-responsive table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-blanco);
+}
+
+.table-responsive th,
+.table-responsive td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--color-borde);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table-responsive thead {
+  background-color: var(--color-fondo);
+}
+
+/* ==========================================================================
+   15. PIE DE PÁGINA (footer)
+   ========================================================================== */
+footer.layout {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 24px;
+  border-top: 1px solid var(--color-borde);
+  text-align: center;
+}
+
+/* ==========================================================================
+   16. MEDIA QUERY - TABLETS (max-width: 992px)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid .campo-completo {
+    grid-column: 1;
+  }
+}
+
+/* ==========================================================================
+   17. MEDIA QUERY - MÓVILES (max-width: 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select,
+  .form-grid textarea {
+    max-width: none;
+  }
+
+  .form-acciones {
+    flex-direction: column;
+  }
+
+  .btn-primario,
+  .btn-secundario,
+  .btn-peligro {
+    width: 100%;
+  }
+
+  .table-responsive table {
+    min-width: 700px;
+  }
+}
+
+/* ==========================================================================
+   EXTENSIONES PARA EL FRONTEND ANGULAR
+   No existían en la maquetación HTML estática original (no había pantalla de
+   login ni mensajes de error/éxito de API). Se agregan aquí siguiendo el
+   mismo patrón de las reglas anteriores y reutilizando las variables de
+   :root, para no romper la consistencia del sistema de diseño.
+   ========================================================================== */
+.mensaje-error {
+  color: var(--color-error);
+  font-size: 14px;
+  margin: 4px 0 0;
+}
+
+.mensaje-exito {
+  color: var(--color-exito);
+  font-size: 14px;
+  margin: 4px 0 0;
+}
+
+/* Oculta visualmente una etiqueta pero la mantiene accesible para lectores
+   de pantalla (usado en controles de tabla sin espacio para un label visible) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

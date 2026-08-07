@@ -1,0 +1,83 @@
+<main class="layout">
+  <section>
+    <h2>Resumen Estadístico</h2>
+
+    @if (cargando()) {
+      <p>Cargando información…</p>
+    } @else if (errorCarga()) {
+      <p class="mensaje-error" role="alert">{{ errorCarga() }}</p>
+    } @else {
+      @switch (rol()) {
+        @case ('USUARIO') {
+          <div class="dashboard-grid">
+            <article class="card">
+              <h3>Mis tickets abiertos</h3>
+              <p>{{ totalPorEstado().get('Abierto') ?? 0 }}</p>
+            </article>
+
+            <article class="card">
+              <h3>Mis tickets en progreso</h3>
+              <p>{{ totalPorEstado().get('En Progreso') ?? 0 }}</p>
+            </article>
+
+            <article class="card">
+              <h3>Mis tickets cerrados</h3>
+              <p>{{ totalPorEstado().get('Cerrado') ?? 0 }}</p>
+            </article>
+          </div>
+        }
+        @case ('TECNICO') {
+          <div class="dashboard-grid">
+            <article class="card">
+              <h3>Asignados: abiertos</h3>
+              <p>{{ totalPorEstado().get('Abierto') ?? 0 }}</p>
+            </article>
+
+            <article class="card">
+              <h3>Asignados: en progreso</h3>
+              <p>{{ totalPorEstado().get('En Progreso') ?? 0 }}</p>
+            </article>
+
+            <article class="card">
+              <h3>Asignados: cerrados</h3>
+              <p>{{ totalPorEstado().get('Cerrado') ?? 0 }}</p>
+            </article>
+          </div>
+        }
+        @case ('ADMINISTRADOR') {
+          <div class="dashboard-grid">
+            <article class="card">
+              <h3>Total de tickets</h3>
+              <p>{{ totalTickets() }}</p>
+            </article>
+
+            <article class="card">
+              <h3>Tickets abiertos</h3>
+              <p>{{ totalPorEstado().get('Abierto') ?? 0 }}</p>
+            </article>
+
+            <article class="card">
+              <h3>Tickets en progreso</h3>
+              <p>{{ totalPorEstado().get('En Progreso') ?? 0 }}</p>
+            </article>
+
+            <article class="card">
+              <h3>Tickets cerrados</h3>
+              <p>{{ totalPorEstado().get('Cerrado') ?? 0 }}</p>
+            </article>
+          </div>
+        }
+      }
+    }
+  </section>
+
+  <section>
+    <h2>Acciones Rápidas</h2>
+    <ul>
+      @if (rol() === 'USUARIO') {
+        <li><a routerLink="/reportar">Reportar nuevo incidente</a></li>
+      }
+      <li><a routerLink="/tickets">Consultar lista de tickets</a></li>
+    </ul>
+  </section>
+</main>

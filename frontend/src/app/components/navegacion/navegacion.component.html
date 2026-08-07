@@ -1,0 +1,33 @@
+<header class="layout site-header">
+  <img ngSrc="assets/img/logo.png" alt="Logotipo Universidad Técnica de Manabí" width="255" height="98" priority>
+  <div class="header-texto">
+    <h1>Sistema Help Desk — Data Center</h1>
+    @if (usuario(); as u) {
+      <p>{{ u.nombre_completo }} · {{ u.rol }}</p>
+    }
+  </div>
+</header>
+
+<nav class="layout" aria-label="Menú principal">
+  <ul class="menu">
+    <li>
+      <a routerLink="/dashboard" routerLinkActive ariaCurrentWhenActive="page">Dashboard</a>
+    </li>
+    @if (usuario()?.rol === 'USUARIO') {
+      <li>
+        <a routerLink="/reportar" routerLinkActive ariaCurrentWhenActive="page">Reportar Incidente</a>
+      </li>
+    }
+    <li>
+      <a routerLink="/tickets" routerLinkActive ariaCurrentWhenActive="page">Ver Tickets</a>
+    </li>
+    @if (usuario()?.rol === 'ADMINISTRADOR') {
+      <li>
+        <a routerLink="/usuarios" routerLinkActive ariaCurrentWhenActive="page">Gestión de Usuarios</a>
+      </li>
+    }
+    <li>
+      <button type="button" class="btn-secundario" (click)="cerrarSesion()">Cerrar sesión</button>
+    </li>
+  </ul>
+</nav>

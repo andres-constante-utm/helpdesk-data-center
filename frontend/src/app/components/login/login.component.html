@@ -1,0 +1,48 @@
+<div class="layout">
+  <div class="card login-card">
+    <h1>Help Desk — Iniciar sesión</h1>
+    <p>Sistema Help Desk del Data Center — Universidad Técnica de Manabí</p>
+
+    <form [formGroup]="formulario" (ngSubmit)="iniciarSesion()" novalidate>
+      <p>
+        <label for="correo">Correo institucional</label>
+        <input
+          type="email"
+          id="correo"
+          formControlName="correo"
+          required
+          autocomplete="username"
+          [attr.aria-invalid]="formulario.controls.correo.invalid && formulario.controls.correo.touched"
+        >
+        @if (formulario.controls.correo.invalid && formulario.controls.correo.touched) {
+          <span class="mensaje-error" role="alert">Ingrese un correo electrónico válido.</span>
+        }
+      </p>
+
+      <p>
+        <label for="password">Contraseña</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          required
+          autocomplete="current-password"
+          [attr.aria-invalid]="formulario.controls.password.invalid && formulario.controls.password.touched"
+        >
+        @if (formulario.controls.password.invalid && formulario.controls.password.touched) {
+          <span class="mensaje-error" role="alert">La contraseña es obligatoria.</span>
+        }
+      </p>
+
+      @if (errorLogin(); as mensaje) {
+        <p class="mensaje-error" role="alert">{{ mensaje }}</p>
+      }
+
+      <p class="form-acciones">
+        <button type="submit" class="btn-primario" [disabled]="enviando()">
+          {{ enviando() ? 'Ingresando…' : 'Ingresar' }}
+        </button>
+      </p>
+    </form>
+  </div>
+</div>

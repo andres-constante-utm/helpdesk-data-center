@@ -1,0 +1,71 @@
+<main class="layout">
+  <section>
+    <h2>Reportar Nuevo Incidente</h2>
+
+    <article>
+      <h3>Formulario de Registro de Incidente</h3>
+
+      <p>
+        Complete el formulario a continuación para registrar un incidente técnico.
+        Todos los campos son obligatorios. Un técnico será asignado una vez
+        procesada la solicitud.
+      </p>
+
+      @if (mensajeExito(); as mensaje) {
+        <p class="mensaje-exito" role="status">{{ mensaje }}</p>
+      }
+      @if (mensajeError(); as mensaje) {
+        <p class="mensaje-error" role="alert">{{ mensaje }}</p>
+      }
+
+      <form [formGroup]="formulario" (ngSubmit)="enviar()" novalidate>
+        <fieldset class="form-grid">
+          <legend>Datos del Incidente</legend>
+
+          <p>
+            <label for="titulo">Título del incidente</label>
+            <input type="text" id="titulo" formControlName="titulo" required>
+          </p>
+
+          <p>
+            <label for="categoria">Categoría</label>
+            <select id="categoria" formControlName="categoria_id" required>
+              <option [ngValue]="null">-- Seleccione una categoría --</option>
+              @for (categoria of categorias; track categoria.id) {
+                <option [ngValue]="categoria.id">{{ categoria.nombre }}</option>
+              }
+            </select>
+          </p>
+
+          <fieldset class="campo-completo">
+            <legend>Prioridad</legend>
+
+            @for (prioridad of prioridades; track prioridad.id) {
+              <p>
+                <input
+                  type="radio"
+                  [id]="'prioridad-' + prioridad.id"
+                  formControlName="prioridad_id"
+                  [value]="prioridad.id"
+                >
+                <label [for]="'prioridad-' + prioridad.id">{{ prioridad.nombre }}</label>
+              </p>
+            }
+          </fieldset>
+
+          <p class="campo-completo">
+            <label for="descripcion">Descripción detallada</label>
+            <textarea id="descripcion" formControlName="descripcion" rows="6" required></textarea>
+          </p>
+        </fieldset>
+
+        <p class="form-acciones">
+          <button type="submit" class="btn-primario" [disabled]="enviando()">
+            {{ enviando() ? 'Enviando…' : 'Enviar solicitud' }}
+          </button>
+          <button type="button" class="btn-secundario" (click)="limpiarFormulario()">Limpiar formulario</button>
+        </p>
+      </form>
+    </article>
+  </section>
+</main>

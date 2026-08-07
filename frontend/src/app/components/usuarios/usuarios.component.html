@@ -1,0 +1,109 @@
+<main class="layout">
+  <section>
+    <h2>Gestión de Usuarios</h2>
+
+    @if (cargando()) {
+      <p>Cargando usuarios…</p>
+    } @else if (errorCarga()) {
+      <p class="mensaje-error" role="alert">{{ errorCarga() }}</p>
+    } @else {
+      @if (mensajeExito(); as mensaje) {
+        <p class="mensaje-exito" role="status">{{ mensaje }}</p>
+      }
+      @if (errorAccion(); as mensaje) {
+        <p class="mensaje-error" role="alert">{{ mensaje }}</p>
+      }
+
+      <article>
+        <h3>Tabla de Usuarios Registrados</h3>
+
+        <p class="form-acciones">
+          <a routerLink="/usuarios/crear" class="btn-primario">Crear nuevo usuario</a>
+        </p>
+
+        <div class="table-responsive">
+          <table>
+            <caption>Usuarios del sistema Help Desk - Data Center UTM</caption>
+            <thead>
+              <tr>
+                <th scope="col">Nombre completo</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Rol</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              @for (usuario of usuarios(); track usuario.id) {
+                <tr>
+                  <td>{{ usuario.nombre_completo }}</td>
+                  <td>{{ usuario.correo }}</td>
+                  <td>{{ nombreRol(usuario.rol_id) }}</td>
+                  <td>{{ usuario.activo ? 'Activo' : 'Inactivo' }}</td>
+                  <td>
+                    <button type="button" class="btn-secundario" (click)="abrirEdicion(usuario)">Editar</button>
+                    @if (usuario.activo) {
+                      <button type="button" class="btn-peligro" (click)="desactivarUsuario(usuario)">
+                        Desactivar
+                      </button>
+                    }
+                  </td>
+                </tr>
+
+                @if (usuarioEnEdicionId() === usuario.id) {
+                  <tr>
+                    <td colspan="5">
+                      <form [formGroup]="formularioEdicion" (ngSubmit)="guardarEdicion(usuario)" novalidate>
+                        <fieldset class="form-grid">
+                          <legend>Editar usuario: {{ usuario.nombre_completo }}</legend>
+
+                          <p>
+                            <label [for]="'nombre-' + usuario.id">Nombre completo</label>
+                            <input type="text" [id]="'nombre-' + usuario.id" formControlName="nombreCompleto" required>
+                          </p>
+
+                          <p>
+                            <label [for]="'correo-' + usuario.id">Correo electrónico</label>
+                            <input type="email" [id]="'correo-' + usuario.id" formControlName="correo" required>
+                          </p>
+
+                          <p>
+                            <label [for]="'rol-' + usuario.id">Rol</label>
+                            <select [id]="'rol-' + usuario.id" formControlName="rol_id" required>
+                              @for (rol of roles; track rol.id) {
+                                <option [ngValue]="rol.id">{{ rol.nombre }}</option>
+                              }
+                            </select>
+                          </p>
+
+                          <p>
+                            <label [for]="'activo-' + usuario.id">Usuario activo</label>
+                            <input type="checkbox" [id]="'activo-' + usuario.id" formControlName="activo">
+                          </p>
+                        </fieldset>
+
+                        <p class="form-acciones">
+                          <button type="submit" class="btn-primario" [disabled]="guardando()">
+                            {{ guardando() ? 'Guardando…' : 'Guardar cambios' }}
+                          </button>
+                          <button type="button" class="btn-secundario" (click)="cancelarEdicion()">Cancelar</button>
+                        </p>
+                      </form>
+                    </td>
+                  </tr>
+                }
+              }
+            </tbody>
+
+            <tfoot>
+              <tr>
+                <td colspan="5">Total de usuarios registrados: {{ usuarios().length }}</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </article>
+    }
+  </section>
+</main>

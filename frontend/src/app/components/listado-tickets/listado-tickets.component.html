@@ -1,0 +1,139 @@
+<main class="layout">
+  <section>
+    <h2>Tickets Registrados</h2>
+
+    @if (cargando()) {
+      <p>Cargando tickets…</p>
+    } @else if (errorCarga()) {
+      <p class="mensaje-error" role="alert">{{ errorCarga() }}</p>
+    } @else {
+      @if (mensajeAccion(); as mensaje) {
+        <p class="mensaje-exito" role="status">{{ mensaje }}</p>
+      }
+      @if (errorAccion(); as mensaje) {
+        <p class="mensaje-error" role="alert">{{ mensaje }}</p>
+      }
+
+      <article>
+        <h3>Tabla de Incidentes Registrados</h3>
+
+        <div class="table-responsive">
+          <table>
+            <caption>Registro de incidentes técnicos - Data Center UTM</caption>
+            <thead>
+              <tr>
+                <th scope="col">ID Ticket</th>
+                <th scope="col">Título</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Prioridad</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Técnico asignado</th>
+                <th scope="col">Fecha de creación</th>
+                @if (rol() === 'TECNICO' || rol() === 'ADMINISTRADOR') {
+                  <th scope="col">Acciones</th>
+                }
+              </tr>
+            </thead>
+
+            <tbody>
+              @for (ticket of tickets(); track ticket.id) {
+                <tr>
+                  <td>{{ formatearId(ticket.id) }}</td>
+                  <td>{{ ticket.titulo }}</td>
+                  <td>{{ ticket.Categorium?.nombre }}</td>
+                  <td>
+                    <span [class]="claseBadge(ticket.Prioridad?.nombre)">{{ ticket.Prioridad?.nombre }}</span>
+                  </td>
+                  <td>
+                    {{ ticket.EstadoTicket?.nombre }}
+                    @if (ticket.solucion) {
+                      <br>
+                      <button type="button" class="btn-secundario" (click)="alternarVistaSolucion(ticket)">
+                        {{ ticketVistaSolucionId() === ticket.id ? 'Ocultar solución' : 'Ver solución' }}
+                      </button>
+                    }
+                  </td>
+                  <td>{{ ticket.tecnicoAsignado?.nombre_completo ?? 'Sin asignar' }}</td>
+                  <td>{{ ticket.fecha_creacion | date: 'yyyy-MM-dd' }}</td>
+
+                  @if (rol() === 'TECNICO') {
+                    <td>
+                      <label class="sr-only" [for]="'estado-' + ticket.id">
+                        Actualizar estado de {{ formatearId(ticket.id) }}
+                      </label>
+                      <select [id]="'estado-' + ticket.id" (change)="cambiarEstado(ticket, $any($event.target).value)">
+                        <option value="">Actualizar estado…</option>
+                        @for (estado of estados; track estado.id) {
+                          <option [value]="estado.id">{{ estado.nombre }}</option>
+                        }
+                      </select>
+                      @if (!ticket.solucion) {
+                        <button type="button" class="btn-secundario" (click)="abrirFormularioSolucion(ticket)">
+                          Registrar solución
+                        </button>
+                      }
+                    </td>
+                  }
+
+                  @if (rol() === 'ADMINISTRADOR') {
+                    <td>
+                      <label class="sr-only" [for]="'tecnico-' + ticket.id">
+                        Asignar técnico a {{ formatearId(ticket.id) }}
+                      </label>
+                      <select [id]="'tecnico-' + ticket.id" (change)="asignarTecnico(ticket, $any($event.target).value)">
+                        <option value="" [selected]="!ticket.tecnico_asignado_id">-- Asignar técnico --</option>
+                        @for (tecnico of tecnicosDisponibles(); track tecnico.id) {
+                          <option [value]="tecnico.id" [selected]="tecnico.id === ticket.tecnico_asignado_id">
+                            {{ tecnico.nombre_completo }}
+                          </option>
+                        }
+                      </select>
+                      <button type="button" class="btn-peligro" (click)="eliminarTicket(ticket)">Eliminar</button>
+                    </td>
+                  }
+                </tr>
+
+                @if (ticketEnSolucionId() === ticket.id) {
+                  <tr>
+                    <td [attr.colspan]="rol() === 'TECNICO' ? 8 : 7">
+                      <label [for]="'solucion-' + ticket.id">Solución para {{ formatearId(ticket.id) }}</label>
+                      <textarea
+                        [id]="'solucion-' + ticket.id"
+                        rows="4"
+                        [value]="textoSolucion()"
+                        (input)="textoSolucion.set($any($event.target).value)"
+                      ></textarea>
+                      <p class="form-acciones">
+                        <button type="button" class="btn-primario" (click)="confirmarSolucion(ticket)">
+                          Guardar solución
+                        </button>
+                        <button type="button" class="btn-secundario" (click)="cancelarSolucion()">Cancelar</button>
+                      </p>
+                    </td>
+                  </tr>
+                }
+
+                @if (ticketVistaSolucionId() === ticket.id) {
+                  <tr>
+                    <td [attr.colspan]="rol() === 'TECNICO' || rol() === 'ADMINISTRADOR' ? 8 : 7">
+                      <p><strong>Solución registrada para {{ formatearId(ticket.id) }}:</strong></p>
+                      <p>{{ ticket.solucion }}</p>
+                    </td>
+                  </tr>
+                }
+              }
+            </tbody>
+
+            <tfoot>
+              <tr>
+                <td [attr.colspan]="rol() === 'TECNICO' || rol() === 'ADMINISTRADOR' ? 8 : 7">
+                  Total de tickets registrados: {{ tickets().length }}
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </article>
+    }
+  </section>
+</main>
